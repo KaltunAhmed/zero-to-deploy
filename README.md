@@ -30,6 +30,6 @@ mental model consistent for later sections.
 
 ### Part 1 — Foundations
 1. [Components of a computer](docs/01-foundations/01-computers-and-os.md)
-2. [What a server is && Run your first local server ](docs/01-foundations/02-what-is-a-server.md)
+2. [What a server is & run your first local server ](docs/01-foundations/02-what-is-a-server.md)
 
 
