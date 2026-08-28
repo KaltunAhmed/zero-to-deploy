@@ -46,6 +46,30 @@ per second). Every calculation, every decision your program makes, every line
 of code you write eventually gets broken down into instructions the CPU
 carries out.
 
+### A note on chip architecture — ARM vs x86
+
+Not all CPUs understand the exact same instructions — different CPU
+"architectures" have different underlying instruction sets. The two you'll
+run into most are:
+
+- **x86 (also called x86_64 / amd64)** — the traditional architecture used by
+  Intel and AMD chips, historically the standard for both laptops and
+  servers
+- **ARM (Apple Silicon: M1/M2/M3/M4)** — a newer, more power-efficient
+  architecture. Since 2020, Apple has used ARM chips in Macs instead of
+  Intel's x86
+
+**Why this matters for you specifically:** if you're on an M1/M2/M3/M4 Mac,
+your laptop's CPU is ARM. Most cloud servers, including the AWS setup we'll
+use later, commonly run x86 by default. A program compiled for one
+architecture generally can't run on the other without extra handling.
+
+This becomes very relevant in Part 5, when we build Docker containers: a
+container built on your Mac defaults to ARM, but if you deploy it straight to
+a typical x86 AWS server, it may fail to run. Docker has ways to handle
+this (specifying a target platform when building), which we'll cover when we
+get there.
+
 
 ### 3. RAM (Random Access Memory). Short-term memory
 
@@ -128,5 +152,49 @@ Think of the whole computer like a restaurant kitchen:
   making sure two dishes don't collide, keeping track of where everything is
 
 ---
+
+# See it for yourself — Activity Monitor
+
+Everything we just covered (CPU, RAM, storage, network) isn't just theory —
+your Mac is showing you this in real time, right now, if you know where to
+look.
+
+## Opening Activity Monitor
+
+- Press `Cmd + Space`, type "Activity Monitor," hit enter
+- Or: Finder → Applications → Utilities → Activity Monitor
+
+You'll see five tabs across the top: **CPU**, **Memory**, **Energy**, **Disk**,
+**Network**. These map almost exactly onto the components we just talked
+about.
+
+## What to look at
+
+**CPU tab**
+- Shows every running program and what percentage of the CPU it's currently
+  using
+- Click **"CPU"** at the bottom of the window (or `Cmd + 5`) to see a live
+  graph of total CPU usage over time
+- Notice it's never at 0% — your OS and background programs are constantly
+  using small slices of it, exactly like we described: many programs sharing
+  the CPU's attention
+
+**Memory tab**
+- Shows how much RAM is currently in use, and by what
+- "Memory Pressure" at the bottom is a simple health indicator — green means
+  plenty of free RAM, red means it's under pressure and starting to slow down
+
+**Disk tab**
+- Shows data being read from and written to storage, live
+
+**Network tab**
+- Shows data currently being sent and received over your network connection
+
+
+## Come back to this later
+
+Once you get to the "run your first local server" step, open Activity
+Monitor first and leave it visible. When you run `python main.py`, look for
+`python` appearing in the
 
 **Next:** [What a server is](./02-what-is-a-server.md)
