@@ -1,4 +1,4 @@
-# zero-to-deploy
+# 🚀 Zero-to-deploy 🚀
 
 A hands-on repo for learning CI/CD, containers, and cloud deployment from
 first principles — starting with what a server even is, and building up to a
