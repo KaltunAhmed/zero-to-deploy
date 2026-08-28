@@ -59,7 +59,7 @@ up to GitHub) and `pull` (bring down changes from GitHub to your local
 copy)
 
 
-## Why branches exist
+## Branches
 
 Since `main` is the source of truth, you generally don't want people editing it directly.
 If five people all changed `main` at the same time, or someone pushed broken code straight to it, the "official" version of the project
@@ -144,3 +144,4 @@ At that point, your branch's commits become part of `main`'s history permanently
 | `git merge <name>` | Merges the specified branch into the branch you're currently on |
 | `git log` | Shows the commit history for the current branch |
 | `git diff` | Shows the exact line-by-line changes you've made but haven't committed yet |
+

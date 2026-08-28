@@ -33,3 +33,11 @@ mental model consistent for later sections.
 2. [What a server is & run your first local server ](docs/01-foundations/02-what-is-a-server.md)
 
 
+### Part 2 — Version Control
+4. [What Git is vs what GitHub is](docs/02-version-control/01-git-vs-github.md)
+5. [Repositories](docs/02-verison-control/01-git-vs-github.md#repositories) 
+6. [Branches](docs/02-verison-control/01-git-vs-github.md#stagingandcommitting)
+7. [Staging and committing](docs/02-verison-control/01-git-vs-github.md#staging-and-committing)
+8. [Pull Requests](docs/02-verison-control/01-git-vs-github.md#pull-requests)
+
+
