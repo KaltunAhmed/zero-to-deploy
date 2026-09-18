@@ -61,8 +61,6 @@ These are the ones you can actually see and plug something into:
 
 **_Virtual port:_**
 
-**_Virtual port:_**
-
 Virtual ports are numbered channels used purely for network communication, existing only in software.
 
 Every device gets an **IP address**. This is how computers find each other
