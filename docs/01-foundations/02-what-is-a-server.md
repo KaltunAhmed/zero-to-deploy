@@ -10,7 +10,7 @@ A **server** is just a computer that:
 
 That's it. A server isn't a special category of hardware. It's a regular
 computer, doing a specific job: waiting around to answer other computers. It
-has the exact same components we just covered — CPU, RAM, storage, a
+has the exact same components we just covered. A CPU, RAM, storage, a
 motherboard, a network interface, an OS. Nothing about it is fundamentally
 different from your own laptop.
 
@@ -61,24 +61,54 @@ These are the ones you can actually see and plug something into:
 
 **_Virtual port:_**
 
+**_Virtual port:_**
+
 Virtual ports are numbered channels used purely for network communication, existing only in software.
 
-Every device get an **IP address** this is how computers find each other on a network. The same way a street address could 
-identify a building. When your browser wants to load a website, it's ultimately sending a request to the IP address of the server hosting it. 
+Every device gets an **IP address**. This is how computers find each other
+on a network, the same way a street address identifies a building. When your
+browser wants to load a website, it's ultimately sending a request to the IP
+address of the server hosting it.
 
-
-But an IP address alone only gets a request to the right *computer*, not to the right *program on that computer*. 
-
-A single computer can easily be running dozens of programs waiting for requests at the same time — a web
+But an IP address alone only gets a request to the right *computer*, not to
+the right *program on that computer*. A single computer can easily be
+running dozens of programs waiting for requests at the same time. A web
 server, a database, a chat app, all on the same machine. So once a request
-arrives at the right IP address, how does the computer know *which* program it's actually meant for?
+arrives at the right IP address, how does the computer know *which* program
+it's actually meant for?
 
 That's what a **port** is for.
 
-A port is a numbered "door" into a computer, used specifically for network traffic. 
-When a program wants to receive requests, it doesn't just listen to the computer in general. It listens on a specific port number. 
-A request has to specify both the IP address *and* the port it's aiming for — the IP
-address gets you to the right building, the port number gets you to the right apartment.
+A port is a numbered "door" into a computer, used specifically for network
+traffic. When a program wants to receive requests, it doesn't just listen to
+the computer in general, it listens on a specific port number. A request
+has to specify both the IP address *and* the port it's aiming for: the IP
+address gets you to the right building, the port number gets you to the
+right apartment.
+
+### Ports work both ways
+
+This applies even to a program that's only ever *asking* for things, not
+waiting for requests for example  a browser loading a webpage. When your browser
+sends a request, your computer temporarily assigns it a port too, so that
+when the response comes back, the OS knows exactly which program on your
+machine it belongs to.
+
+So every network connection actually involves two ports:
+
+- A **destination port** on the server — usually a well-known one, like `443`
+- A **source port** on your own machine — a temporary one, assigned
+  automatically by your OS just for that one exchange
+
+You never see or choose this source port yourself; the OS handles it
+silently. The distinction that matters is really about *behaviour*, not
+which side has a port:
+
+- A **server** listens on a fixed, known port, waiting for requests to
+  arrive
+- A **client** (your browser, an app, a container making an outgoing call)
+  gets a temporary port assigned automatically, purely so responses can find
+  their way back
 
 ### Well-known ports
 
@@ -100,10 +130,6 @@ Services generally listen on "well-known" port numbers, in the range
 - Two programs generally can't listen on the *same* port at the same time on
   the same computer — that's what causes the annoying "port already in use"
   error you'll eventually run into
-
-
-
-
 
 ---
 
