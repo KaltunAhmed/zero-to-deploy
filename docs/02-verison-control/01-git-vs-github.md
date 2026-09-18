@@ -145,3 +145,34 @@ At that point, your branch's commits become part of `main`'s history permanently
 | `git log` | Shows the commit history for the current branch |
 | `git diff` | Shows the exact line-by-line changes you've made but haven't committed yet |
 
+## Exercise: make a branch, commit a change, push it
+
+Time to actually do what this doc just described, using [app/main.py](../../app/main.py). It's got a `NAME` variable that gets printed out when the server responds to a request.
+
+1. **Check your status** — Open a terminal in the project root and run `git status`. It should show a clean working directory (nothing changed yet).
+2. **Create a branch** — Don't edit `main` directly. Create your own branch off to the side:
+   ```
+   git checkout -b update-my-name
+   ```
+3. **Make the change** — Open `app/main.py` and change:
+   ```python
+   NAME = "YOUR NAME HERE"
+   ```
+   to your own name, e.g. `NAME = "Ahmed"`.
+4. **Verify the change** — Run `git status` again. `main.py` should now show up as modified. Run `git diff` to see exactly what changed.
+5. **Stage it** — `git add app/main.py`
+6. **Commit it** — `git commit -m "Update server name"`
+7. **Push the branch to GitHub** — Since this branch doesn't exist on GitHub yet, you need to tell Git to create it there too:
+   ```
+   git push -u origin update-my-name
+   ```
+8. **Open a pull request** — Go to your repo on GitHub. You should see a prompt to open a PR for the branch you just pushed. Create the PR comparing `update-my-name` against `main`.
+9. **Merge it** — Once you're happy with it (or it's approved), merge the PR into `main` on GitHub.
+10. **Sync locally** — Switch back to `main` and pull down the merged change:
+    ```
+    git checkout main
+    git pull
+    ```
+
+At the end of this, `main` on both GitHub and your machine should have your name in it, and your feature branch has done its job.
+
