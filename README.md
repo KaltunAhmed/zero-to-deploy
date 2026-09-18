@@ -39,5 +39,7 @@ mental model consistent for later sections.
 6. [Branches](docs/02-verison-control/01-git-vs-github.md#stagingandcommitting)
 7. [Staging and committing](docs/02-verison-control/01-git-vs-github.md#staging-and-committing)
 8. [Pull Requests](docs/02-verison-control/01-git-vs-github.md#pull-requests)
+9. [Common git commands](docs/02-verison-control/01-git-vs-github.md#common-git-commands)
+10. [Exersise: make a branch, commit a change, push it](docs/02-verison-control/01-git-vs-github.md#exercise)
 
 
